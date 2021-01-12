@@ -4,13 +4,32 @@
 
 // Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
 
-const solution = startNum => {
+// const solution = startNum => {
 
-  let sumOfMultiples = 0;
+//   let sumOfMultiples = 0;
 
-  for(let i = 0; i < startNum; i++) {
-    if (i % 3 === 0 || i % 5 === 0) sumOfMultiples += i;  
+//   for(let i = 0; i < startNum; i++) {
+//     if (i % 3 === 0 || i % 5 === 0) sumOfMultiples += i;  
+//   }
+
+//   return sumOfMultiples;
+// }
+
+
+// ! Move Zeros 
+
+// Implement a function move_zeros which takes two arguments first an array of numbers arrNum and second a Boolean value isRight (default is true) and returns the array with all zero to right if isRight is true else to left if isRight is false.
+
+const move_zeros = (arrNum, isRight = true) => {
+
+  const zerosArr = [];
+  const otherNumsArr = [];
+
+  for (const val of arrNum) {
+    if (val === 0) zerosArr.push(val)
+    else otherNumsArr.push(val);
   }
 
-  return sumOfMultiples;
+  if (isRight) return [...otherNumsArr, ...zerosArr]
+  else return [...zerosArr, ...otherNumsArr];
 }

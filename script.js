@@ -20,16 +20,31 @@
 
 // Implement a function move_zeros which takes two arguments first an array of numbers arrNum and second a Boolean value isRight (default is true) and returns the array with all zero to right if isRight is true else to left if isRight is false.
 
-const move_zeros = (arrNum, isRight = true) => {
+// const move_zeros = (arrNum, isRight = true) => {
 
-  const zerosArr = [];
-  const otherNumsArr = [];
+//   const zerosArr = [];
+//   const otherNumsArr = [];
 
-  for (const val of arrNum) {
-    if (val === 0) zerosArr.push(val)
-    else otherNumsArr.push(val);
-  }
+//   for (const val of arrNum) {
+//     if (val === 0) zerosArr.push(val)
+//     else otherNumsArr.push(val);
+//   }
 
-  if (isRight) return [...otherNumsArr, ...zerosArr]
-  else return [...zerosArr, ...otherNumsArr];
+//   if (isRight) return [...otherNumsArr, ...zerosArr]
+//   else return [...zerosArr, ...otherNumsArr];
+// }
+
+// ! Does my Number Look Big in This? 
+
+const narcissistic = value => {
+  const valueArr = value.toString().split("")
+  const calculatedTotal = valueArr.reduce((total, currentVal) => {
+    console.log(currentVal, parseInt(currentVal));
+    return total + (parseInt(currentVal) ** valueArr.length) 
+  }, 0)
+
+  if (calculatedTotal === value) return true
+  return false
 }
+
+narcissistic(153)
